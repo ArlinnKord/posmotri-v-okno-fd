@@ -13,9 +13,12 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -47,5 +50,337 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-end;
+  inline-size: 100%;
+  width: 1140px;
+  height: 534px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 711px;
+  height: 456px;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  max-width: 399px;
+  height: 536px;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.search-form__fieldset {
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-form__fieldset-title {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__fieldset:nth-child(1) {
+  width: 225px;
+  height: 54px;
+}
+
+.search-form__fieldset:nth-child(2) {
+  width: 212px;
+  height: 49px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+  align-items: center; /* проверить */
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid white;
+  position: relative;
+  flex-shrink: 0;
+  padding: 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label:hover .search-form__pseudo-checkbox {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.search-form__submit-button {
+  width: 193px;
+  height: 34px;
+  margin-left: auto;
+  align-self: flex-end;
+  margin-bottom: 3px;
+}
+
+.search-form__textfield {
+  appearance: none;
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  color: white;
+  font: inherit;
+  width: 225px;
+  padding: 2px 0;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
+.search-form__textfield::placeholder {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+  border-bottom-color: #545050;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid white;
+  outline-offset: 2px;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content__list-container {
+  position: relative;
+  gap: 30px;
+  overflow-y: auto;
+  margin-top: 26px;
+  padding-bottom: 1px;
+  scroll-padding-bottom: 1px;
+}
+
+.result__video-container {
+  position: relative;
+  width: 711px;
+  height: 386px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result__video-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+  color: #fff;
+}
+.content__accent {
+  color: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover .content__video-card-title,
+.content__card-link:hover .content__video-card-description {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -1px;
+}
+
+.content__list-item {
+  padding: 0 3px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  min-width: 193px;
+  height: 103px;
+}
+
+.content__video-card-thumbnail {
+  min-width: 193px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__video-card-title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  max-height: calc(2 * 30px);
+}
+
+.content__video-card-description {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 90%;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  max-height: calc(2 * 18px * 0.9);
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease;
+  position: relative;
+}
+
+.more-button {
+  width: 100%;
+  height: 34px;
+  margin-top: 20px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
 }
