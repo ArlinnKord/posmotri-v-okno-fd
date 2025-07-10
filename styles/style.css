@@ -66,10 +66,10 @@ ol {
 .content {
   display: flex;
   gap: 30px;
-  align-items: flex-end;
+  align-items: flex-start;
   inline-size: 100%;
   width: 1140px;
-  height: 534px;
+  min-height: 0;
 }
 
 .result {
@@ -77,14 +77,14 @@ ol {
   flex-direction: column;
   gap: 20px;
   width: 711px;
-  height: 456px;
+  padding-top: 78px;
 }
 
 .content__details {
   display: flex;
   flex-direction: column;
   max-width: 399px;
-  height: 536px;
+  max-height: 534px;
 }
 
 .search-form {
@@ -96,7 +96,6 @@ ol {
 }
 
 .search-form__fieldset {
-  overflow: hidden;
   border: none;
   padding: 0;
   margin: 0;
@@ -112,26 +111,24 @@ ol {
 .search-form__label {
   display: flex;
   align-items: center;
-  overflow: hidden;
   gap: 5px;
   width: fit-content;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .search-form__fieldset:nth-child(1) {
   width: 225px;
-  height: 54px;
 }
 
 .search-form__fieldset:nth-child(2) {
   width: 212px;
-  height: 49px;
 }
 
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
-  align-items: center; /* проверить */
+  align-items: center;
 }
 
 .search-form__pseudo-checkbox {
@@ -165,12 +162,6 @@ ol {
   text-decoration: underline;
 }
 
-.search-form__label {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
 .search-form__submit-button {
   width: 193px;
   height: 34px;
@@ -184,9 +175,9 @@ ol {
   background: transparent;
   background-color: transparent;
   border: none;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
   color: white;
+  border-top: 1px currentColor;
+  border-bottom: 1px currentColor;  
   font: inherit;
   width: 225px;
   padding: 2px 0;
@@ -297,12 +288,10 @@ ol {
 .content__video-card-description-container {
   flex-grow: 1;
   min-width: 193px;
-  height: 103px;
 }
 
 .content__video-card-thumbnail {
   min-width: 193px;
-  height: 103px;
   object-fit: cover;
   object-position: center;
 }
@@ -316,11 +305,10 @@ ol {
   color: #fff;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-  max-height: calc(2 * 30px);
 }
 
 .content__video-card-description {
@@ -328,14 +316,11 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 90%;
-  color: #fff;
+  -webkit-line-clamp: 3;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal;
-  max-height: calc(2 * 18px * 0.9);
 }
 
 .button {
