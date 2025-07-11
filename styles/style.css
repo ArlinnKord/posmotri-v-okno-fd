@@ -84,7 +84,6 @@ ol {
   display: flex;
   flex-direction: column;
   max-width: 399px;
-  max-height: 534px;
 }
 
 .search-form {
@@ -173,11 +172,10 @@ ol {
 .search-form__textfield {
   appearance: none;
   background: transparent;
-  background-color: transparent;
   border: none;
   color: white;
-  border-top: 1px currentColor;
-  border-bottom: 1px currentColor;  
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   font: inherit;
   width: 225px;
   padding: 2px 0;
@@ -211,6 +209,7 @@ ol {
 
 .content__list-container {
   position: relative;
+  max-height: 298px;
   gap: 30px;
   overflow-y: auto;
   margin-top: 26px;
@@ -236,7 +235,7 @@ ol {
 }
 
 .title {
-  font-family: var(--second-family);
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -304,8 +303,9 @@ ol {
   text-transform: uppercase;
   color: #fff;
   display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
@@ -316,11 +316,14 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 90%;
-  -webkit-line-clamp: 3;
   display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 0;
+  margin: 0;
 }
 
 .button {
@@ -329,7 +332,7 @@ ol {
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   cursor: pointer;
   transition: text-decoration 0.3s ease;
   position: relative;
